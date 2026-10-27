@@ -52,9 +52,9 @@ const editTask = function () {
   const editInput = listItem.querySelector("input[type=text]");
   const label = listItem.querySelector("label");
   const editBtn = listItem.querySelector(".edit");
-  const containsClass = listItem.classList.contains("editMode");
+  const containsEditMode = listItem.classList.contains("editMode");
 
-  if (containsClass) {
+  if (containsEditMode) {
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
   } else {
@@ -67,8 +67,8 @@ const editTask = function () {
 
 const deleteTask = function () {
   const listItem = this.parentNode;
-  const ul = listItem.parentNode;
-  ul.removeChild(listItem);
+  const taskList = listItem.parentNode;
+  taskList.removeChild(listItem);
 };
 
 const taskCompleted = function () {
